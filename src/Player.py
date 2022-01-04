@@ -13,24 +13,25 @@ class Player:
     def __init__(self, name, color) -> None:
         self.name = name
         self.color = color
-        self.territory = []
+        self.territories = []
         self.cards = []
 
 # GET    
-    def get_nome(self):
+    def get_name(self):
         return self.name
     
-    def get_cor(self):
+    def get_color(self):
         return self.color
     
-    def get_territorios(self):
-        return self.territory
+    def get_territories(self):
+        return self.territories
     
-    def get_num_territorios(self):
-        return len(self.territory)
+    def get_num_territories(self):
+        return len(self.territories)
     
-    def add_territorio(self, territory):
-        self.territory.append(territory)
+    def add_territory(self, territory):
+        self.territories.append(territory)
+        territory.owner = self
     
-    def del_territorio(self, territory):
-        self.territory.remove(territory)
+    def remove_territory(self, territory):
+        self.territories.remove(territory)
